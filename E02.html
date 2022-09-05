@@ -6,11 +6,15 @@
     //Contudo, se o aluno ajudado não conseguiu melhorar a nota na segunda prova, o programa deverá apresentar a mensagem "CONTINUE ENSINANDO".
 
     //ENTRADA
-
-
+const primeiraNota = Number(prompt("informe a nota da primeira prova :"));
+const segundaNota = Number(prompt("informe a nota da segunda prova :"));
+const notaAjudante = Number(prompt("informe a nota do ajudante no segundo trimestre :"));
+let resultadoNaTela;
     //PROCESSAMENTO
+(segundaNota > primeiraNota) ?  resultadoNaTela = "Obrigado tutor sua nova nota ficou em :" + (notaAjudante * 1.15).toFixed(2) + "."
+ :  resultadoNaTela = "CONTINUE ENSINANDO"
 
 
     //SAÍDA
-
+document.write(resultadoNaTela)
 </script>

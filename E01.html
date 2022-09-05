@@ -7,11 +7,34 @@
     //Calcule se o usuário possui dinheiro suficiente para realizar a viagem para o destino que pretende. Se o usuário puder viajar, o programa apresentará a mensagem "Boa viagem" e quantos dias poderá ficar no destino, além de qual será o custo da viagem. Caso não possa viajar o programa apresentará a mensagem "Sem Férias" e também apresentará quantos dinheiros (R$) estão faltando para realizar a viagem.
 
     //ENTRADA
-
-
+const estadoViagem = prompt("qual estado deseja realizar a viagem ? (RS ou MG)")
+const diasDeViagem = prompt("quantos dias ficará em viagem:")
+const dinheiro = Number(prompt("quantos (R$) você possui para gastar na viagem :"))
     //PROCESSAMENTO
+let custoMg = 210 
+let custoRs = 180 
 
+let custoTotalRs = custoRs * diasDeViagem
+let custoTotalMg = custoMg * diasDeViagem
+ 
+let diasMg = custoTotalMg / custoMg
+let diasRs = custoTotalRs / custoRs
 
-    //SAÍDA
+dinheiroFaltandoMg = custoMg - dinheiro
+dinheiroFaltandoRs = custoRs - dinheiro
+
+if (estadoViagem === "RS" && dinheiro >= custoRs) {
+    document.write("Boa Viagem, você poderá ficar " + diasRs.toFixed(2) + "dias e o custo será de : " + custoTotalRs + ".")
+} 
+else if (estadoViagem === "RS" && dinheiro < custoRs)  {
+    document.write("Sem ferias, você não viajará faltam : " + dinheiroFaltandoRs + ".")
+} 
+else if (estadoViagem === "MG" && dinheiro >= custoMg) {
+    document.write("Boa Viagem, você poderá ficar " + diasMg.toFixed(2) + "dias e o custo será de : " + custoTotalMg + ".")
+} 
+else if (estadoViagem === "MG" && dinheiro < custoMg)  {
+    document.write("Sem ferias, você não viajará faltam : " + dinheiroFaltandoMg + ".")
+}
+    
 
 </script>
